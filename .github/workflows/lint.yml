@@ -1,10 +1,11 @@
 ---
 name: "Lint"
 
-on:  # yamllint disable-line rule:truthy
+on: # yamllint disable-line rule:truthy
   pull_request:
   push:
-    branches: master
+    branches:
+      - master
 
 jobs:
   lint:
@@ -15,10 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup Python 3.9
+      - name: Setup Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: 3.9
+          python-version: 3.11
 
       - name: Upgrade Setuptools
         run: pip install --upgrade setuptools wheel

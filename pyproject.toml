@@ -1,6 +1,6 @@
 [tool.black]
 line-length = 100
-target-version = ['py38', 'py39']
+target-version = ['py36', 'py38', 'py39', 'py310', 'py311', 'py312']
 exclude = '(\.eggs|\.git|\.mypy_cache|\.venv|venv|env|_build|build|build|dist|eggs)'
 
 [tool.isort]
@@ -34,3 +34,23 @@ disable=[
   'too-many-arguments',
   'duplicate-code',
 ]
+
+[tool.ruff]
+exclude = [
+  '.git', 
+  '.eggs',
+  '.mypy_cache',
+  '.ruff_cache',
+  '.venv',
+  'venv',
+  'dist',
+  '_build',
+  'build',
+]
+
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.format]
+indent-style = "space"
+docstring-code-format = true

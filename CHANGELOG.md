@@ -1,5 +1,68 @@
 ## [Unreleased]
 
+## [0.13.2] - 2024-08-24
+### Fix
+ - Fix prevent datetimeshortcuts from rendering multiple times (#129) (thx @vxsx)
+
+## [0.13.1] - 2024-07-23
+### Fix
+- Fix initial value in NumericRangeFilter form field (#124) (thx @gretapataki)
+
+## [0.13.0] - 2024-05-21
+### Added
+- Compatibility Django 5
+- Add support for collapsable filter (Django >= 4.1) (#120). Change the default range template
+
+## [0.12.5] - 2024-05-18
+### Fix
+- Fix quick select template property #118
+
+## [0.12.4] - 2024-04-13
+### Fix
+- Typo
+
+## [0.12.3] - 2024-04-13
+### Fix
+- Typo
+
+## [0.12.2] - 2024-04-13
+### Fix
+- DateTimeRangeFilter: microsecond is optional #115
+
+## [0.12.1] - 2024-02-12
+### Added
+- Use current timezone instead of default #114
+
+### Fix
+- DateTimeRangeFilter: upper time bound includes microseconds #115
+
+## [0.12.0] - 2023-12-09
+### Added
+- Compatibility Django 5
+- Added Greek translation (thx @tagmat) #111
+
+### Fix
+- NumericRangeFilter: Fix SCP
+
+## [0.11.2] - 2023-09-10
+### Fix
+- NumericRangeFilter: Fix filter for the value zero (#105) (thx @autoantwort)
+
+## [0.11.1] - 2023-08-29
+### Fix
+- Fix DateRangeQuickSelectListFilter (thx @robertpro)
+
+## [0.11.0] - 2023-08-19
+### Added
+- Add Add DateRangeQuickSelectListFilter (#103) (thx @robertpro)
+
+## [0.10.0] - 2023-04-08
+### Added
+- Add builders. Now you can use Builders to create filters: 
+`DateRangeFilterBuilder`, `DateTimeRangeFilterBuilder`, `NumericRangeFilterBuilder`.
+Its useful for definition custom title or initial (default) values.
+- Compatibility Django 4.2
+
 
 ## [0.9.1] - 2023-05-09
 ### Added
@@ -176,7 +239,20 @@
 - Add get_timezone
 - Drop support Django < 1.8
 
-[Unreleased]: https://github.com/silentsokolov/django-admin-rangefilter/compare/0.9.0...HEAD
+[Unreleased]: https://github.com/silentsokolov/django-admin-rangefilter/compare/0.13.2...HEAD
+[0.13.2]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.13.1...v0.13.2
+[0.13.1]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.13.0...v0.13.1
+[0.13.0]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.12.5...v0.13.0
+[0.12.5]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.12.4...v0.12.5
+[0.12.4]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.12.3...v0.12.4
+[0.12.3]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.12.2...v0.12.3
+[0.12.2]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.12.1...v0.12.2
+[0.12.1]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.12.0...v0.12.1
+[0.12.0]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.11.2...v0.12.0
+[0.11.2]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.11.1...v0.11.2
+[0.11.1]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.11.0...v0.11.1
+[0.11.0]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.10.0...v0.11.0
+[0.10.0]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.8.8...v0.9.0
 [0.8.8]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.8.7...v0.8.8
 [0.8.7]: https://github.com/silentsokolov/django-admin-rangefilter/compare/v0.8.6...v0.8.7
