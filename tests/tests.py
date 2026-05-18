@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
 import datetime
 
 try:
@@ -62,6 +60,7 @@ def select_by(dictlist):
 
 
 class DateFuncTestCase(TestCase):
+    @skipIf(pytz is None, "install pytz")
     def test_make_dt_aware_without_pytz(self):
         with override_settings(USE_TZ=False):
             now = datetime.datetime.now()
@@ -289,7 +288,7 @@ class NumericRangeFilterTestCase(TestCase):
         filterspec = changelist.get_filters(request)[0][0]
         self.assertEqual(force_str(filterspec.title), "float value")
 
-    def test_datetimefilter_filtered(self):
+    def test_numericfilter_filtered(self):
         request_factory = RequestFactory()
         modeladmin = RangeModelFloatAdmin(RangeModelFloat, site)
 
@@ -314,7 +313,7 @@ class NumericRangeFilterTestCase(TestCase):
         self.assertEqual(choice["query_string"], "?")
         self.assertEqual(choice["system_name"], "float-value")
 
-    def test_datetimefilter_with_default(self):
+    def test_numericfilter_with_default(self):
         request_factory = RequestFactory()
         modeladmin = RangeModelFloatAdmin(RangeModelFloat, site)
         modeladmin.get_rangefilter_float_value_default = lambda r: [  # pylint: disable=W0201
@@ -335,7 +334,7 @@ class NumericRangeFilterTestCase(TestCase):
         self.assertEqual(filterspec.default_gte, 1)
         self.assertEqual(filterspec.default_lte, 20)
 
-    def test_datefilter_filtered_with_one_params(self):
+    def test_numericfilter_filtered_with_one_params(self):
         request_factory = RequestFactory()
         modeladmin = RangeModelFloatAdmin(RangeModelFloat, site)
 
@@ -359,7 +358,7 @@ class NumericRangeFilterTestCase(TestCase):
         self.assertEqual(choice["query_string"], "?")
         self.assertEqual(choice["system_name"], "float-value")
 
-    def test_datetimefilter_custom_title(self):
+    def test_numericfilter_custom_title(self):
         request_factory = RequestFactory()
         custom_title = "foo bar"
         modeladmin = RangeModelFloatAdmin(RangeModelFloat, site)
@@ -484,7 +483,7 @@ class DateTimeRangeFilterTestCase(TestCase):
         self.assertEqual(filterspec.default_gte, self.today)
         self.assertEqual(filterspec.default_lte, self.tomorrow)
 
-    def test_datefilter_filtered_with_one_params(self):
+    def test_datetimefilter_filtered_with_one_params(self):
         request_factory = RequestFactory()
         modeladmin = RangeModelDTTimeAdmin(RangeModelDT, site)
 

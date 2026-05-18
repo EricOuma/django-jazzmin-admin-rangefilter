@@ -1,20 +1,20 @@
 [tool.black]
 line-length = 100
-target-version = ['py38', 'py39']
+target-version = ['py36', 'py38', 'py39', 'py310', 'py311', 'py312']
 exclude = '(\.eggs|\.git|\.mypy_cache|\.venv|venv|env|_build|build|build|dist|eggs)'
 
 [tool.isort]
 line_length = 100
-profile = "black"
+profile = 'black'
 use_parentheses = true
 skip = '.eggs/,.mypy_cache/,.venv/,venv/,env/,eggs/'
 
 [tool.pylint]
 [tool.pylint.master]
-py-version = 3.9
+py-version = 3.11
 
 [tool.pylint.messages-control]
-disable=[
+disable = [
   'C',
   'R',
 
@@ -34,3 +34,23 @@ disable=[
   'too-many-arguments',
   'duplicate-code',
 ]
+
+[tool.ruff]
+exclude = [
+  '.git',
+  '.eggs',
+  '.mypy_cache',
+  '.ruff_cache',
+  '.venv',
+  'venv',
+  'dist',
+  '_build',
+  'build',
+]
+
+line-length = 100
+target-version = 'py312'
+
+[tool.ruff.format]
+indent-style = 'space'
+docstring-code-format = true
