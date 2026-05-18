@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
 import django
 
-__author__ = "Dmitriy Sokolov"
-__version__ = "1.0.0"
+__author__ = "Eric Ouma"
+__version__ = "1.0.1"
 
 if django.VERSION < (3, 2):
     default_app_config = "rangefilter.apps.RangeFilterConfig"
